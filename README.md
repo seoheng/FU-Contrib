@@ -31,18 +31,18 @@ begin
 
 	
 	DECLARE @RunTypeId			int
-	DECLARE @TAA2				varchar(100)
-	DECLARE @TAGMFU				varchar(100)
-	DECLARE @TAGMFA				varchar(100)
-	DECLARE @TAGMF8				varchar(100)
+	DECLARE @portcode			varchar(100)
+	DECLARE @portcode		        varchar(100)
+	DECLARE @portcode			varchar(100)
+	DECLARE @portcode			varchar(100)
 	DECLARE @Portfolio			varchar(100)
 
 
 	Set @RunTypeId = 1
-	Set @TAA2 = 'TAA2,TAGTAA'
-	Set @TAGMFU	 = 'TAGMFU'
-  Set @TAGMFA	 = 'TAGMFA'
-  Set @TAGMF8	 = 'TAGMF8'
+	Set @portcode_1 = 'portcode_A,portcode_B'
+	Set @portcode_2	 = 'portcode_C'
+        Set @portcode_3	 = 'portcode_D'
+        Set @portcode_4	 = 'portcode_E'
 
 	if OBJECT_ID('tempdb..#TempFURtnsSummary') IS NOT NULL 	DROP TABLE  #TempFURtnsSummary;
 	if OBJECT_ID('tempdb..#TempFUContribSummary') IS NOT NULL 	DROP TABLE  #TempFUContribSummary;
@@ -77,22 +77,22 @@ BEGIN
 
 
 	-- Identify futures portfolio
-	if @Port = 'TAA2'
+	if @Port = 'portcode_1'
 
 	begin
-		Set @Portfolio = @TAA2
+		Set @Portfolio = @portcode_1
 	end
 	
-	else if @Port = 'TAGMFU'
+	else if @Port = 'portcode_2'
 
 	begin
-		Set @Portfolio = @TAGMFU
+		Set @Portfolio = @portcode_2
 	end
 
-	else if @Port = 'TAGMF8'
+	else if @Port = 'portcode_3'
 
 	begin
-		Set @Portfolio = @TAGMF8
+		Set @Portfolio = @portcode_3
 	end
 	;
 
